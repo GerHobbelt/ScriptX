@@ -279,7 +279,7 @@ std::vector<Local<String>> Local<Object>::getKeys() const {
 
   std::unique_ptr<JSPropertyEnum, std::function<void(JSPropertyEnum*)>> ptr(
       list, [context](JSPropertyEnum* list) {
-        if (list) js_free(context, list);
+        if (list) qjs_free(context, list);
       });
 
   std::vector<Local<String>> ret;
